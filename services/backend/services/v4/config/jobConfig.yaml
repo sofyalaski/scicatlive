@@ -1,0 +1,34 @@
+configVersion: v1.0
+jobs:
+  - jobType: archive
+    create:
+      auth: "#datasetOwner"
+      actions:
+        - actionType: validate
+          datasets:
+            datasetlifecycle.archivable:
+              const: true
+    update:
+      auth: archivemanager
+      actions: []
+  - jobType: retrieve
+    create:
+      auth: "#datasetAccess"
+      actions:
+        - actionType: validate
+          datasets:
+            datasetlifecycle.retrievable:
+              const: true
+    update:
+      auth: archivemanager
+      actions: []
+  - jobType: public
+    create:
+      auth: "#all"
+      actions:
+        - actionType: validate
+          datasets:
+            isPublished:
+              const: true
+    update:
+      auth: archivemanager
