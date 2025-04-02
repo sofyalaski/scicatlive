@@ -1,6 +1,6 @@
 services:
   backend:
-    user: root
+    image: ""
     build:
       context:
         https://github.com/SciCatProject/scicat-backend-next.git#master
@@ -10,9 +10,5 @@ services:
     env_file:
       - ./config/.jobs.env
     volumes:
-      - v4_jobs_dev:${WORKDIR:-/home/node/app}
       - ./config/jobConfig.yaml:${WORKDIR:-/home/node/app}/jobConfig.yaml
       - ${DEV:+}./config/jobConfig.dev.yaml:${WORKDIR:-/home/node/app}/jobConfig.yaml
-volumes:
-  v4_jobs_dev:
-    driver: local
