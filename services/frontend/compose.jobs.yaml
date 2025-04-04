@@ -7,6 +7,3 @@ services:
       no_cache: true 
     environment:
       GITHUB_REPO: https://github.com/SciCatProject/frontend.git#master
-    volumes:
-      - frontend_jobs_dev:${WORKDIR:-/home/node/app}
-

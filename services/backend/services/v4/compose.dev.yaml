@@ -7,6 +7,7 @@ services:
       target: dev
     volumes:
       - ./config/functionalAccounts.dev.json:/home/node/app/functionalAccounts.json
+      - ./config/jobConfig.dev.yaml:${WORKDIR:-/home/node/app}/jobConfig.yaml
     env_file:
       - ./config/.dev.env
     healthcheck:
