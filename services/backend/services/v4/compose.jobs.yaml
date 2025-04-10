@@ -11,4 +11,3 @@ services:
       - ./config/.jobs.env
     volumes:
       - ./config/jobConfig.yaml:${WORKDIR:-/home/node/app}/jobConfig.yaml
-      - ${DEV:+}./config/jobConfig.dev.yaml:${WORKDIR:-/home/node/app}/jobConfig.yaml
